@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Arcade Stick Layout</title>
+        <link rel="stylesheet" href="CSS/Main.css">
+        <script src="JS/Arduino.js"></script>
+    </head>
+    <body onload="Setup()">
+    <div id="Value-Controls">
+        <div id="Gate-Input">
+            <h4 id="gatePos">Gate Position</h4>
+            <form id="Gate_Value" name="Gate">
+                <label class="switch">
+                    <input id="gateToggle" type="checkbox" name="Pos" value="0"/>
+                    <span class="slider round"></span>
+                </label>
+            </form>
+        </div>
+        <div id="Color-Inputs">
+            <div class="Button-Row">
+                <label for="button0">(Y)</label><input type="color" id="button0" class="btnColorInput" value="#ffffff"/>
+                <label for="button1">(X)</label><input type="color" id="button1" class="btnColorInput" value="#ffffff"/>
+                <label for="button2">(R)</label><input type="color" id="button2" class="btnColorInput" value="#ffffff"/>
+                <label for="button3">(L)</label><input type="color" id="button3" class="btnColorInput" value="#ffffff"/>
+            </div>
+            <div class="Button-Row">
+                <label for="button7">(B)</label><input type="color" id="button7" class="btnColorInput" value="#ffffff"/>
+                <label for="button6">(A)</label><input type="color" id="button6" class="btnColorInput" value="#ffffff"/>
+                <label for="button5">(ZR)</label><input type="color" id="button5" class="btnColorInput" value="#ffffff"/>
+                <label for="button4">(ZL)</label><input type="color" id="button4" class="btnColorInput" value="#ffffff"/>
+            </div>
+        </div>
+        
+    </div>
+    <div id="Preset-Container">
+            <form>
+                <label for="lname">Layout name:</label>
+                <input type="text" id="lname" name="lname" maxlength="8" value="">
+                <input type="button" id="save-Button" value="Save">
+            </form>
+
+            <div id="Preset-List">
+                <div class="Saved-Preset">
+                    <p>Sample</p>
+                    <div>
+                        <button>Load</button>
+                        <button>Overwrite</button>
+                        <button>Delete</button>
+                    </div>
+                </div>
+                <div class="Saved-Preset">
+                    <p>Test</p>
+                    <button>Load</button>
+                    <button>Overwrite</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

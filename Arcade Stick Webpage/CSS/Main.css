@@ -1,0 +1,225 @@
+/*#region Background */
+:root {
+	--glow-rgb: 245 245 245;
+
+	--light-gold-rgb: 249 181 51;
+	--dark-gold-rgb: 215 147 23;
+
+	--primary-stripe-rgb: 230 230 230;
+	--secondary-stripe-rgb: 240 240 240;
+}
+#app {
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+}
+#bg-container {
+	background: radial-gradient(rgb(var(--light-gold-rgb)), rgb(var(--dark-gold-rgb)));
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+#bg-pattern
+{
+	background-image: url("/Images/Background-1.png");
+	background-size: 10%;
+	position: absolute;
+	left: 50%;
+	top: 0px;
+	translate: -50% 0%;
+	z-index: 1;
+	height: 100%;
+	width: 100%;
+	min-width: 1200px;
+	opacity: 0.10;
+	animation: pan 180s linear infinite;
+	will-change: background-position;
+}
+
+#bg-gradient-overlay {
+	background: radial-gradient(circle, transparent 75%, rgb(var(--dark-gold-rgb)));
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0.9;
+	z-index: 2;
+}
+
+@keyframes move-background {
+	0% {
+		background-position: 0% 0%;
+	}
+
+	100% {
+		background-position: -100% 0%;
+	}
+}
+@keyframes pan {
+	0% {
+		background-position: 0% 0%;
+	}
+	100% {
+		background-position: 100% 0%;
+	}
+}
+/*#endregion*/
+
+/* #region Inputs */
+#Value-Controls
+{
+	/* Position */
+	align-content: center;
+	margin: auto;
+	
+	border-style: dashed;
+	border-color: blue;
+}
+#Gate-Input {
+	float: left;
+	width: 50%;
+
+	text-align: center;
+}
+
+#Color-Inputs
+{
+	/* Position */
+	float: right;
+	width: 50%;
+
+	text-align: center;
+}
+
+#Color-Inputs input[type="color"]
+{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	width: 50px;
+	height: 50px;
+	border: none;
+	cursor: pointer;
+}
+
+.Button-Row {
+}
+/* #endregion */ 
+
+/*#region Preset */
+#Preset-Container
+{
+	/* Position */
+	align-content: center;
+	margin: auto;
+	
+	padding: 5px;
+	border-style: dashed;
+	border-color: red;
+	text-align: center;
+}
+
+#Preset-List 
+{
+	/* Position */
+	align-content: center;
+	width: 300px;
+	margin: auto;
+	
+	padding: 5px;
+	background-color: lightblue;
+	height: 300px;
+	overflow: auto;
+}
+
+.Saved-Preset
+{
+	margin: 5px 0 5px 0;
+	border-style: solid;
+	border-color: Black;
+}
+
+.Saved-Preset p
+{
+	text-align: center;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.Preset-Actions
+{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.Preset-Actions button
+{
+	width: 75px;
+	margin-bottom: 5px;
+}
+/*#endregion */
+
+/* The switch - the box around the slider */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* The slider */
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+input:checked + .slider {
+	background-color: #2196F3;
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
